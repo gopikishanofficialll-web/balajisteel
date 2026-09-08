@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balaji Steel & Railing - Quality Steel Work</title>
+    <!-- Google Fonts for professional look -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <style>
+        /* CSS STYLES */
+        :root {
+            --primary-color: #0f2027;
+            --secondary-color: #203a43;
+            --accent-color: #ff9f43;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://unsplash.com') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            background-color: #20ba5a;
+        }
+
+        /* Services & Gallery Sections */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item .info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .btn-submit {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; gap: 10px; }
+            nav ul { margin-top: 10px; }
+            .hero h2 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo">
+            <h1>BALAJI <span>STEEL & RAILING</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">होम</a></li>
+                <li><a href="#gallery">हमारा काम</a></li>
+                <li><a href="#contact">संपर्क करें</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>मजबूत और खूबसूरत स्टील रेलिंग कार्य</h2>
+        <p>हम घर, ऑफिस और दुकानों के लिए बेहतरीन क्वालिटी के स्टील रेलिंग, गेट और ग्रिल का काम किफायती दामों में करते हैं।</p>
+        <a href="https://wa.me्ते%20Balaji%20Steel,%20मुझे%20स्टील%20के%20काम%20के%20बारे%20में%20जानकारी%20चाहिए।" target="_blank" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> अभी व्हाट्सएप करें
+        </a>
+    </section>
+
+    <!-- Gallery Section (यहाँ आप फोटो बदल सकते हैं) -->
+    <section id="gallery" class="container">
+        <h2 class="section-title">हमारा बेहतरीन काम (Gallery)</h2>
+        <div class="gallery-grid">
+            
+            <!-- फोटो 1 -->
+            <div class="gallery-item">
+                <img src="https://unsplash.com" alt="Steel Railing 1">
+                <div class="info"><h4>स्टेनलेस स्टील सीढ़ी रेलिंग</h4></div>
+            </div>
+
+            <!-- फोटो 2 -->
+            <div class="gallery-item">
+                <img src="https://unsplash.com" alt="Steel Railing 2">
+                <div class="info"><h4>बालकनी ग्लास व स्टील रेलिंग</h4></div>
+            </div>
+
+            <!-- फोटो 3 -->
+            <div class="gallery-item">
+                <img src="https://unsplash.com" alt="Steel Gate">
+                <div class="info"><h4>आधुनिक स्टील मुख्य गेट</h4></div>
+            </div>
+
+            <!-- फोटो 4 -->
+            <div class="gallery-item">
+                <img src="https://unsplash.com" alt="Steel Design">
+                <div class="info"><h4>फैंसी विंडो सेफ्टी ग्रिल</h4></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="container">
+        <h2 class="section-title">मुफ़्त कोटेशन के लिए फॉर्म भरें</h2>
+        <div class="contact-section">
+            <form id="whatsappForm">
+                <div class="form-group">
+                    <label for="name">आपका नाम:</label>
+                    <input type="text" id="name" placeholder="अपना नाम लिखें" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">मोबाइल नंबर:</label>
+                    <input type="tel" id="phone" placeholder="अपना नंबर लिखें" required>
+                </div>
+                <div class="form-group">
+                    <label for="workType">काम का प्रकार:</label>
+                    <input type="text" id="workType" placeholder="उदा: सीढ़ी की रेलिंग, मुख्य गेट" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">विवरण (Message):</label>
+                    <textarea id="message" placeholder="आपकी क्या जरूरत है? यहाँ लिखें..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="fab fa-whatsapp"></i> जानकारी व्हाट्सएप पर भेजें
+                </button>
+            </form>
