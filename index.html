@@ -1,354 +1,1086 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BALAJI STEEL & RAILING | Jayram Bishnoi</title>
-    <!-- External Style Sheets -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <link href="https://googleapis.com" rel="stylesheet">
-    
-    <style>
-        /* CSS STYLING & VARIABLES */
-        :root {
-            --primary: #0f172a;
-            --secondary: #1e293b;
-            --accent: #d97706;
-            --light-bg: #f8fafc;
-            --text-dark: #0f172a;
-            --text-muted: #64748b;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balaji Steel & Railing | Premium Stainless Steel Fabrication</title>
+<meta name="description" content="Balaji Steel & Railing — premium SS 304/316 grade stainless steel railings, toughened glass railings, designer CNC gates and safety grills. Proprietor Jayram Bishnoi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --slate-950:#0a1120;
+    --slate-900:#0f172a;
+    --slate-800:#1e293b;
+    --slate-700:#334155;
+    --slate-500:#64748b;
+    --slate-300:#cbd5e1;
+    --slate-100:#f1f5f9;
+    --gold-700:#b45309;
+    --gold-600:#d97706;
+    --gold-500:#f59e0b;
+    --gold-200:#fde3b8;
+    --off-white:#f8f6f2;
+    --radius-sm:2px;
+    --radius-md:3px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --maxw:1220px;
+  }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+  }
 
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+  body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:var(--slate-900);
+    color:var(--slate-100);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
 
-        /* NAVIGATION NAVBAR */
-        header {
-            background-color: #0f172a;
-            color: white;
-            padding: 1.2rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 99999;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--accent);
-        }
+  h1,h2,h3,h4{
+    font-family:'Marcellus',serif;
+    margin:0;
+    color:var(--off-white);
+    font-weight:400;
+    letter-spacing:.01em;
+  }
 
-        .logo h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        .logo span {
-            color: var(--accent);
-        }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{margin:0;padding:0;list-style:none;}
+  button{font-family:inherit;cursor:pointer;}
 
-        nav a {
-            color: #cbd5e1;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-        }
+  ::selection{background:var(--gold-600);color:var(--slate-950);}
 
-        nav a:hover {
-            color: var(--accent);
-        }
+  :focus-visible{
+    outline:2px solid var(--gold-500);
+    outline-offset:3px;
+  }
 
-        /* HERO AREA */
-        .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
-            height: 75vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-            margin-top: 60px;
-        }
+  .container{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 32px;
+  }
 
-        .hero h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
+  .section-pad{padding:120px 0;}
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            color: #e2e8f0;
-        }
+  .kicker{
+    display:block;
+    font-family:'Marcellus',serif;
+    font-size:.95rem;
+    color:var(--gold-500);
+    margin-bottom:14px;
+    letter-spacing:.04em;
+  }
 
-        .btn-premium {
-            background-color: var(--accent);
-            color: white;
-            padding: 14px 35px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-        }
+  .divider-mark{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+  }
+  .divider-mark .line{
+    width:46px;height:1px;background:var(--gold-600);
+  }
 
-        /* SECTIONS STRUCTURE */
-        section {
-            padding: 5rem 5%;
-        }
+  .section-head{
+    max-width:640px;
+    margin-bottom:64px;
+  }
+  .section-head h2{font-size:clamp(2rem,3.6vw,2.85rem);line-height:1.15;}
+  .section-head p{color:var(--slate-300);margin-top:18px;font-size:1.05rem;max-width:560px;}
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 34px;
+    font-size:.95rem;
+    font-weight:600;
+    border-radius:var(--radius-sm);
+    border:1px solid transparent;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
+    white-space:nowrap;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg,var(--gold-500),var(--gold-700));
+    color:var(--slate-950);
+    box-shadow:0 10px 30px -10px rgba(217,119,6,.55);
+  }
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(217,119,6,.7);}
+  .btn-outline{
+    background:transparent;
+    color:var(--off-white);
+    border-color:rgba(241,245,249,.35);
+  }
+  .btn-outline:hover{border-color:var(--gold-500);color:var(--gold-500);}
 
-        .section-header h3 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-        }
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:900;
+    background:rgba(10,17,32,0);
+    border-bottom:1px solid rgba(241,245,249,0);
+    transition:background .4s var(--ease), border-color .4s var(--ease), padding .4s var(--ease);
+    padding:26px 0;
+  }
+  header.scrolled{
+    background:rgba(10,17,32,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(217,119,6,.18);
+    padding:16px 0;
+  }
+  .nav-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand .mark{
+    width:42px;height:42px;
+    border:1px solid var(--gold-600);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold-500);
+    font-family:'Marcellus',serif;
+    font-size:1.1rem;
+    flex-shrink:0;
+  }
+  .brand .name{
+    font-family:'Marcellus',serif;
+    font-size:1.18rem;
+    line-height:1.1;
+    color:var(--off-white);
+  }
+  .brand .name small{
+    display:block;
+    font-family:'Poppins',sans-serif;
+    font-size:.6rem;
+    letter-spacing:.18em;
+    color:var(--gold-500);
+    margin-top:3px;
+  }
+  nav ul{display:flex;gap:38px;}
+  nav a{
+    font-size:.88rem;
+    font-weight:500;
+    color:var(--slate-300);
+    position:relative;
+    padding:4px 0;
+    transition:color .3s var(--ease);
+  }
+  nav a::after{
+    content:'';
+    position:absolute;left:0;bottom:0;
+    width:0;height:1px;
+    background:var(--gold-500);
+    transition:width .3s var(--ease);
+  }
+  nav a:hover{color:var(--off-white);}
+  nav a:hover::after{width:100%;}
+  .nav-cta{display:flex;align-items:center;gap:26px;}
+  .nav-cta .btn{padding:11px 24px;font-size:.82rem;}
 
-        .section-header h3::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            margin: 10px auto 0;
-        }
+  .burger{
+    display:none;
+    width:26px;height:20px;
+    position:relative;
+    background:none;border:none;
+  }
+  .burger span{
+    position:absolute;left:0;right:0;height:2px;background:var(--off-white);
+    transition:transform .3s var(--ease), opacity .3s var(--ease), top .3s var(--ease);
+  }
+  .burger span:nth-child(1){top:0;}
+  .burger span:nth-child(2){top:9px;}
+  .burger span:nth-child(3){top:18px;}
+  .burger.open span:nth-child(1){top:9px;transform:rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){top:9px;transform:rotate(-45deg);}
 
-        /* ABOUT BALAJI STEEL */
-        .about {
-            background-color: white;
-        }
+  .mobile-menu{
+    display:none;
+    position:fixed;
+    inset:0 0 auto 0;
+    top:0;
+    background:var(--slate-950);
+    z-index:850;
+    padding:110px 32px 40px;
+    transform:translateY(-100%);
+    transition:transform .45s var(--ease);
+  }
+  .mobile-menu.open{transform:translateY(0);}
+  .mobile-menu ul{display:flex;flex-direction:column;gap:26px;}
+  .mobile-menu a{font-size:1.3rem;font-family:'Marcellus',serif;color:var(--off-white);}
+  .mobile-menu .btn{margin-top:34px;width:100%;justify-content:center;}
 
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    align-items:center;
+    padding-top:120px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg,rgba(10,17,32,.65) 0%,rgba(10,17,32,.55) 45%,var(--slate-900) 100%),
+      url('https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?q=80&w=2400&auto=format&fit=crop') center 30%/cover no-repeat;
+    z-index:0;
+  }
+  .hero::after{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(90deg,rgba(217,119,6,.05) 0 1px,transparent 1px 90px);
+    z-index:0;
+    opacity:.5;
+  }
+  .hero-inner{position:relative;z-index:2;max-width:760px;}
+  .hero .kicker{opacity:0;animation:riseIn .8s var(--ease) .15s forwards;}
+  .hero h1{
+    font-size:clamp(2.6rem,6vw,4.6rem);
+    line-height:1.08;
+    opacity:0;
+    animation:riseIn .9s var(--ease) .32s forwards;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--gold-500);
+  }
+  .hero .lede{
+    margin-top:26px;
+    font-size:1.15rem;
+    color:var(--slate-300);
+    max-width:560px;
+    opacity:0;
+    animation:riseIn .9s var(--ease) .5s forwards;
+  }
+  .hero .cta-row{
+    margin-top:44px;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    opacity:0;
+    animation:riseIn .9s var(--ease) .68s forwards;
+  }
+  .hero .stats{
+    margin-top:70px;
+    display:flex;
+    gap:56px;
+    flex-wrap:wrap;
+    opacity:0;
+    animation:riseIn .9s var(--ease) .85s forwards;
+  }
+  .hero .stats div b{
+    display:block;
+    font-family:'Marcellus',serif;
+    font-size:2rem;
+    color:var(--off-white);
+  }
+  .hero .stats div span{
+    font-size:.8rem;
+    color:var(--slate-500);
+    letter-spacing:.03em;
+  }
+  @keyframes riseIn{
+    from{opacity:0;transform:translateY(26px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  .scroll-cue{
+    position:absolute;
+    bottom:36px;left:50%;
+    transform:translateX(-50%);
+    z-index:2;
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+    color:var(--slate-500);
+    font-size:.72rem;
+    letter-spacing:.15em;
+  }
+  .scroll-cue .stick{
+    width:1px;height:34px;
+    background:linear-gradient(var(--gold-500),transparent);
+    animation:cueMove 2s ease-in-out infinite;
+  }
+  @keyframes cueMove{
+    0%,100%{transform:translateY(0);opacity:1;}
+    50%{transform:translateY(8px);opacity:.4;}
+  }
 
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
+  /* ---------- reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(34px);
+    transition:opacity .8s var(--ease), transform .8s var(--ease);
+  }
+  .reveal.in-view{opacity:1;transform:translateY(0);}
 
-        .about-text h4 {
-            font-size: 1.4rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--slate-900);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:.95fr 1.05fr;
+    gap:76px;
+    align-items:center;
+  }
+  .about-visual{
+    position:relative;
+  }
+  .about-visual .frame{
+    position:relative;
+    border:1px solid rgba(217,119,6,.35);
+    padding:18px;
+  }
+  .about-visual img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+  }
+  .about-visual .badge{
+    position:absolute;
+    bottom:-28px;right:-28px;
+    background:var(--slate-800);
+    border:1px solid var(--gold-600);
+    padding:22px 26px;
+    max-width:230px;
+  }
+  .about-visual .badge b{
+    font-family:'Marcellus',serif;
+    color:var(--gold-500);
+    font-size:1.6rem;
+    display:block;
+  }
+  .about-visual .badge span{
+    font-size:.78rem;
+    color:var(--slate-300);
+  }
+  .about-copy h2{font-size:clamp(1.9rem,3.2vw,2.6rem);margin-bottom:22px;}
+  .about-copy p{color:var(--slate-300);margin-bottom:16px;}
+  .proprietor-line{
+    margin:26px 0 34px;
+    padding:18px 22px;
+    border-left:2px solid var(--gold-600);
+    background:rgba(217,119,6,.06);
+  }
+  .proprietor-line b{color:var(--off-white);font-family:'Marcellus',serif;font-size:1.05rem;}
+  .proprietor-line span{display:block;color:var(--slate-500);font-size:.85rem;margin-top:4px;}
 
-        .about-features {
-            margin-top: 20px;
-        }
+  .checklist{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 26px;
+    margin-top:8px;
+  }
+  .checklist li{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    font-size:.94rem;
+    color:var(--slate-100);
+  }
+  .checklist li i{
+    color:var(--gold-500);
+    font-size:1.05rem;
+    margin-top:2px;
+    flex-shrink:0;
+  }
+  .checklist li strong{display:block;font-size:.95rem;}
+  .checklist li small{color:var(--slate-500);font-size:.8rem;}
 
-        .feature-item {
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--slate-950);position:relative;}
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:2px;
+    background:rgba(241,245,249,.08);
+  }
+  .service-card{
+    background:var(--slate-900);
+    padding:46px 32px;
+    transition:background .4s var(--ease), transform .4s var(--ease);
+    position:relative;
+  }
+  .service-card:hover{background:var(--slate-800);transform:translateY(-6px);}
+  .service-card .icon-wrap{
+    width:60px;height:60px;
+    border:1px solid var(--gold-600);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:28px;
+    color:var(--gold-500);
+    font-size:1.4rem;
+    transition:background .4s var(--ease), color .4s var(--ease);
+  }
+  .service-card:hover .icon-wrap{background:var(--gold-600);color:var(--slate-950);}
+  .service-card h3{font-size:1.25rem;margin-bottom:12px;}
+  .service-card p{color:var(--slate-500);font-size:.9rem;}
+  .service-card .num{
+    position:absolute;top:30px;right:32px;
+    font-family:'Marcellus',serif;
+    font-size:.85rem;
+    color:var(--slate-700);
+  }
 
-        .feature-item i {
-            color: var(--accent);
-            margin-right: 10px;
-        }
+  /* ---------- GALLERY ---------- */
+  .gallery{background:var(--slate-900);}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-auto-rows:270px;
+    gap:14px;
+  }
+  .gallery-grid .g-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
+  .gallery-grid .g-item:nth-child(4){grid-row:span 1;}
+  .g-item{
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+  }
+  .g-item img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .7s var(--ease), filter .5s var(--ease);
+    filter:grayscale(15%) brightness(.88);
+  }
+  .g-item:hover img{transform:scale(1.08);filter:grayscale(0%) brightness(1);}
+  .g-item .g-caption{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:22px;
+    background:linear-gradient(0deg,rgba(10,17,32,.92),transparent);
+    transform:translateY(12px);
+    opacity:0;
+    transition:opacity .4s var(--ease), transform .4s var(--ease);
+  }
+  .g-item:hover .g-caption{opacity:1;transform:translateY(0);}
+  .g-caption b{font-family:'Marcellus',serif;color:var(--off-white);font-size:1.05rem;display:block;}
+  .g-caption span{color:var(--gold-500);font-size:.78rem;}
 
-        /* SERVICES CARDS */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+  /* ---------- CONTACT / QUOTE ---------- */
+  .contact{background:var(--slate-950);}
+  .contact-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:0;
+    border:1px solid rgba(241,245,249,.1);
+  }
+  .contact-info{
+    background:var(--slate-800);
+    padding:64px 52px;
+    position:relative;
+  }
+  .contact-info h3{font-size:1.7rem;margin-bottom:10px;}
+  .contact-info>p{color:var(--slate-300);margin-bottom:40px;font-size:.95rem;}
+  .info-item{
+    display:flex;
+    gap:18px;
+    padding:22px 0;
+    border-top:1px solid rgba(241,245,249,.1);
+  }
+  .info-item:last-of-type{border-bottom:1px solid rgba(241,245,249,.1);}
+  .info-item i{
+    color:var(--gold-500);
+    font-size:1.1rem;
+    width:24px;
+    margin-top:3px;
+    flex-shrink:0;
+  }
+  .info-item b{display:block;font-size:.95rem;color:var(--off-white);margin-bottom:3px;}
+  .info-item span,.info-item a{color:var(--slate-300);font-size:.9rem;}
+  .info-item a:hover{color:var(--gold-500);}
+  .whatsapp-inline{
+    margin-top:36px;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding:15px 26px;
+    background:#25D366;
+    color:#08331c;
+    font-weight:600;
+    font-size:.9rem;
+    border-radius:var(--radius-sm);
+    transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+  }
+  .whatsapp-inline:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(37,211,102,.5);}
 
-        .service-box {
-            background: white;
-            padding: 35px 25px;
-            border-radius: 6px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            text-align: center;
-            transition: transform 0.3s;
-        }
+  .quote-form{
+    background:var(--slate-900);
+    padding:64px 52px;
+  }
+  .quote-form h3{font-size:1.7rem;margin-bottom:10px;}
+  .quote-form>p{color:var(--slate-300);margin-bottom:36px;font-size:.95rem;}
+  .form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    margin-bottom:22px;
+  }
+  .field{display:flex;flex-direction:column;gap:9px;}
+  .field.full{grid-column:1/-1;}
+  .field label{
+    font-size:.78rem;
+    letter-spacing:.03em;
+    color:var(--slate-300);
+  }
+  .field input,.field select,.field textarea{
+    background:var(--slate-800);
+    border:1px solid rgba(241,245,249,.14);
+    color:var(--off-white);
+    padding:14px 16px;
+    font-family:'Poppins',sans-serif;
+    font-size:.92rem;
+    border-radius:var(--radius-sm);
+    transition:border-color .3s var(--ease), background .3s var(--ease);
+  }
+  .field input::placeholder,.field textarea::placeholder{color:var(--slate-500);}
+  .field input:focus,.field select:focus,.field textarea:focus{
+    border-color:var(--gold-600);
+    background:var(--slate-700);
+    outline:none;
+  }
+  .field select{
+    appearance:none;
+    -webkit-appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23d97706' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 16px center;
+  }
+  .field textarea{resize:vertical;min-height:130px;font-family:'Poppins',sans-serif;}
+  .quote-form .btn{width:100%;justify-content:center;padding:17px;font-size:1rem;margin-top:6px;}
+  .form-note{
+    margin-top:16px;
+    font-size:.78rem;
+    color:var(--slate-500);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .form-note i{color:#25D366;}
 
-        .service-box:hover {
-            transform: translateY(-5px);
-        }
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--slate-950);
+    border-top:1px solid rgba(217,119,6,.18);
+    padding:64px 0 30px;
+  }
+  .footer-top{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
+    padding-bottom:44px;
+    border-bottom:1px solid rgba(241,245,249,.08);
+  }
+  .footer-brand .brand{margin-bottom:16px;}
+  .footer-brand p{color:var(--slate-500);font-size:.88rem;max-width:320px;}
+  .footer-cols{display:flex;gap:70px;flex-wrap:wrap;}
+  .footer-col h4{
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:.82rem;
+    letter-spacing:.05em;
+    color:var(--gold-500);
+    margin-bottom:20px;
+  }
+  .footer-col li{margin-bottom:12px;}
+  .footer-col a{color:var(--slate-300);font-size:.9rem;transition:color .3s var(--ease);}
+  .footer-col a:hover{color:var(--gold-500);}
+  .footer-bottom{
+    padding-top:28px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+    font-size:.8rem;
+    color:var(--slate-500);
+  }
+  .footer-bottom span b{color:var(--gold-500);font-weight:500;}
 
-        .service-box i {
-            font-size: 2.8rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .wa-float{
+    position:fixed;
+    bottom:26px;right:26px;
+    width:60px;height:60px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;
+    font-size:1.7rem;
+    z-index:999;
+    box-shadow:0 10px 28px -6px rgba(37,211,102,.6);
+    transition:transform .3s var(--ease);
+  }
+  .wa-float:hover{transform:scale(1.08);}
+  .wa-float::before{
+    content:'';
+    position:absolute;inset:0;
+    border-radius:50%;
+    border:2px solid #25D366;
+    animation:waPulse 2.2s ease-out infinite;
+  }
+  @keyframes waPulse{
+    0%{transform:scale(1);opacity:.7;}
+    100%{transform:scale(1.7);opacity:0;}
+  }
 
-        .service-box h4 {
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
+  /* toast */
+  .toast{
+    position:fixed;
+    bottom:100px;right:26px;
+    background:var(--slate-800);
+    border:1px solid var(--gold-600);
+    color:var(--off-white);
+    padding:14px 20px;
+    font-size:.85rem;
+    border-radius:var(--radius-sm);
+    z-index:999;
+    opacity:0;
+    transform:translateY(10px);
+    transition:opacity .35s var(--ease), transform .35s var(--ease);
+    pointer-events:none;
+    max-width:260px;
+  }
+  .toast.show{opacity:1;transform:translateY(0);}
 
-        /* PREMIUM GALLERY */
-        .gallery {
-            background-color: white;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 6px;
-            height: 250px;
-        }
-
-        .gallery-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* CONTACT FORM AREA */
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 40px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .contact-details {
-            background-color: var(--secondary);
-            color: white;
-            padding: 35px;
-            border-radius: 6px;
-        }
-
-        .contact-details h4 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
-
-        .info-row {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .info-row i {
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-
-        .contact-form-box {
-            background-color: white;
-            padding: 35px;
-            border-radius: 6px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        .submit-btn {
-            background-color: var(--accent);
-            color: white;
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
-
-        /* STICKY WHATSAPP GREEN BUTTON */
-        .whatsapp-sticky {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 30px;
-            right: 25px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 35px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            z-index: 999999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-
-        footer {
-            background-color: var(--primary);
-            color: #94a3b8;
-            text-align: center;
-            padding: 2rem 20px;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
-            nav { display: none; }
-        }
-    </style>
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1080px){
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .about-grid{grid-template-columns:1fr;gap:90px 0;}
+    .about-visual{order:2;}
+    .about-visual .badge{right:16px;}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:860px){
+    nav,.nav-cta{display:none;}
+    .burger{display:block;}
+    .mobile-menu{display:block;}
+    .section-pad{padding:88px 0;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:220px;}
+    .gallery-grid .g-item:nth-child(1){grid-column:span 2;grid-row:span 1;}
+    .form-row{grid-template-columns:1fr;}
+    .contact-info,.quote-form{padding:48px 30px;}
+    .footer-top{flex-direction:column;}
+  }
+  @media (max-width:560px){
+    .container{padding:0 20px;}
+    .services-grid{grid-template-columns:1fr;}
+    .checklist{grid-template-columns:1fr;}
+    .hero .stats{gap:34px;}
+    .about-visual img{height:360px;}
+    .about-visual .badge{position:static;margin-top:-6px;max-width:100%;}
+  }
+</style>
 </head>
 <body>
 
-    <!-- Main Navigation Header -->
-    <header>
-        <div class="logo">
-            <h1>BALAJI <span>STEEL & RAILING</span></h1>
-        </div>
-        <nav>
-            <a href="#home">होम</a>
-            <a href="#about">हमारे बारे में</a>
-            <a href="#services">सेवाएं</a>
-            <a href="#gallery">गैलरी</a>
-            <a href="#contact">संपर्क फॉर्म</a>
-        </nav>
-    </header>
+<header id="site-header">
+  <div class="container nav-wrap">
+    <a href="#home" class="brand">
+      <span class="mark">BS</span>
+      <span class="name">Balaji Steel & Railing<small>PREMIUM METAL CRAFTSMANSHIP</small></span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+917261912722"><i class="fa-solid fa-phone"></i> +91 72619 12722</a>
+      <a href="#contact" class="btn btn-gold">Get Free Quote</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-    <!-- 1. HERO HOME SECTION -->
-    <section class="hero" id="home">
-        <h2>Premium Steel & Railing Works</h2>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="btn btn-gold">Get Free Quote</a>
+</div>
+
+<!-- ================= HOME / HERO ================= -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <span class="kicker">◆ Est. Craftsmanship in Stainless Steel</span>
+    <h1>Engineering Strength.<br>Designing <em>Elegance</em>.</h1>
+    <p class="lede">Balaji Steel & Railing crafts premium SS 304/316 railings, toughened glass balustrades, CNC laser-cut gates and safety grills — built to outlast generations and elevate every façade they guard.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-gold"><i class="fa-solid fa-file-invoice"></i> Get Free Quote</a>
+      <a href="#gallery" class="btn btn-outline"><i class="fa-solid fa-images"></i> View Our Work</a>
+    </div>
+    <div class="stats">
+      <div><b>500+</b><span>Projects Delivered</span></div>
+      <div><b>SS 304/316</b><span>Marine-Grade Steel</span></div>
+      <div><b>100%</b><span>Rust-Free Guarantee</span></div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><span class="stick"></span></div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about section-pad" id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <div class="frame">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop" alt="Premium stainless steel railing installation" loading="lazy">
+      </div>
+      <div class="badge">
+        <b>15+ Yrs</b>
+        <span>Of precision fabrication and on-site installation experience</span>
+      </div>
+    </div>
+    <div class="about-copy reveal">
+      <div class="divider-mark"><span class="line"></span><span class="kicker" style="margin:0;">About The Foundry</span></div>
+      <h2>Built on Steel. Backed by a Name You Can Trust.</h2>
+      <p>Balaji Steel & Railing was founded on a simple principle: premium materials, honest fabrication, and installations that are built to last a lifetime — not a season. Every railing, gate and grill that leaves our workshop is measured, welded and polished to a standard fit for the most demanding residences and commercial façades.</p>
+      <p>We work exclusively with corrosion-resistant SS 304 and SS 316 grade steel, toughened safety glass, and precision CNC laser-cutting — so what we deliver today still looks and performs like new, years from now.</p>
+      <div class="proprietor-line">
+        <b>Jayram Bishnoi</b>
+        <span>Proprietor, Balaji Steel & Railing</span>
+      </div>
+      <ul class="checklist">
+        <li><i class="fa-solid fa-shield-halved"></i><div><strong>SS 304/316 Grade Steel</strong><small>Marine-grade, corrosion resistant</small></div></li>
+        <li><i class="fa-solid fa-droplet-slash"></i><div><strong>Rust-Free Guarantee</strong><small>Written assurance on every job</small></div></li>
+        <li><i class="fa-solid fa-infinity"></i><div><strong>Lifetime Durability</strong><small>Engineered for decades of use</small></div></li>
+        <li><i class="fa-solid fa-truck-fast"></i><div><strong>Timely Delivery</strong><small>Projects completed on schedule</small></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services section-pad" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="divider-mark"><span class="line"></span><span class="kicker" style="margin:0;">What We Craft</span></div>
+      <h2>Our Premium Services</h2>
+      <p>From residential balustrades to commercial-grade gates, each service is executed with the same obsessive precision and premium-grade material sourcing.</p>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="num">01</span>
+      <div class="icon-wrap"><i class="fa-solid fa-grip-lines"></i></div>
+      <h3>Stainless Steel Railing</h3>
+      <p>Balcony, staircase and terrace railings in SS 304/316 — hand-polished to a mirror or satin finish, engineered for structural safety and lasting shine.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="num">02</span>
+      <div class="icon-wrap"><i class="fa-solid fa-vector-square"></i></div>
+      <h3>Toughened Glass Railing</h3>
+      <p>Frameless and semi-framed glass balustrade systems using 10–12mm toughened glass, paired with steel or SS fittings for a seamless, modern silhouette.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="num">03</span>
+      <div class="icon-wrap"><i class="fa-solid fa-compass-drafting"></i></div>
+      <h3>Designer CNC Main Gates</h3>
+      <p>Laser-cut, custom-designed main gates that merge intricate detailing with heavy-duty steel construction — a true architectural statement piece.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="num">04</span>
+      <div class="icon-wrap"><i class="fa-solid fa-window-restore"></i></div>
+      <h3>Safety Window Grills</h3>
+      <p>Elegant yet secure window grill systems, custom-fabricated to match your façade design without compromising on safety or ventilation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="gallery section-pad" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="divider-mark"><span class="line"></span><span class="kicker" style="margin:0;">Portfolio</span></div>
+      <h2>Premium Work Gallery</h2>
+      <p>A curated look at recent installations — every project photographed on-site upon completion.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?q=80&w=1600&auto=format&fit=crop" alt="Modern staircase steel railing" loading="lazy">
+        <div class="g-caption"><b>Staircase Railing</b><span>Residential · SS 304</span></div>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1200&auto=format&fit=crop" alt="Glass balcony railing" loading="lazy">
+        <div class="g-caption"><b>Frameless Glass Balcony</b><span>Toughened Glass</span></div>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1595514535215-8f5c1f253e18?q=80&w=1200&auto=format&fit=crop" alt="Designer laser cut main gate" loading="lazy">
+        <div class="g-caption"><b>Designer Main Gate</b><span>CNC Laser-Cut</span></div>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop" alt="Terrace steel railing" loading="lazy">
+        <div class="g-caption"><b>Terrace Railing</b><span>SS 316 Marine Grade</span></div>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200&auto=format&fit=crop" alt="Safety window grill design" loading="lazy">
+        <div class="g-caption"><b>Safety Window Grill</b><span>Custom Fabrication</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT / QUOTE ================= -->
+<section class="contact section-pad" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="divider-mark"><span class="line"></span><span class="kicker" style="margin:0;">Get In Touch</span></div>
+      <h2>Request Your Free Quotation</h2>
+      <p>Tell us about your project and we'll respond with a detailed quote — usually within a few hours.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <h3>Visit Or Call Us</h3>
+        <p>Our workshop and team are ready to discuss your project in detail.</p>
+
+        <div class="info-item">
+          <i class="fa-solid fa-user-tie"></i>
+          <div><b>Proprietor</b><span>Jayram Bishnoi</span></div>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i>
+          <div><b>Phone</b><a href="tel:+917261912722">+91 72619 12722</a></div>
+        </div>
+        <div class="info-item">
+          <i class="fa-regular fa-clock"></i>
+          <div><b>Working Hours</b><span>Mon – Sat, 9:00 AM – 7:30 PM</span></div>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div><b>Workshop Address</b><span>Balaji Steel & Railing Workshop, Industrial Area, [Your City], Rajasthan, India</span></div>
+        </div>
+
+        <a class="whatsapp-inline" id="waDirect" href="#" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Chat With Us on WhatsApp
+        </a>
+      </div>
+
+      <div class="quote-form">
+        <h3>Online Quotation Form</h3>
+        <p>Fill in your details below — we'll send your request straight to our WhatsApp team.</p>
+        <form id="quoteForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="clientName">Client Name</label>
+              <input type="text" id="clientName" name="clientName" placeholder="Enter your full name" required>
+            </div>
+            <div class="field">
+              <label for="clientMobile">Active Mobile Number</label>
+              <input type="tel" id="clientMobile" name="clientMobile" placeholder="10-digit mobile number" pattern="[0-9]{10}" maxlength="10" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field full">
+              <label for="workType">Work Type</label>
+              <select id="workType" name="workType" required>
+                <option value="" disabled selected>Select the work you need</option>
+                <option value="Stainless Steel Railing">Stainless Steel Railing</option>
+                <option value="Toughened Glass Railing">Toughened Glass Railing</option>
+                <option value="Designer CNC Main Gate">Designer CNC Main Gate</option>
+                <option value="Safety Window Grills">Safety Window Grills</option>
+                <option value="Other / Multiple Services">Other / Multiple Services</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field full">
+              <label for="workDetails">Work / Size Description</label>
+              <textarea id="workDetails" name="workDetails" placeholder="Describe the work, approximate size/length, location and any design preference" required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-gold">
+            <i class="fa-brands fa-whatsapp"></i> Send Enquiry on WhatsApp
+          </button>
+          <div class="form-note"><i class="fa-brands fa-whatsapp"></i> Your details are sent directly to our WhatsApp — no spam, ever.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#home" class="brand">
+          <span class="mark">BS</span>
+          <span class="name">Balaji Steel & Railing<small>PREMIUM METAL CRAFTSMANSHIP</small></span>
+        </a>
+        <p>Premium stainless steel railings, glass balustrades, designer gates and safety grills — fabricated to a standard built for a lifetime.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>NAVIGATE</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SERVICES</h4>
+          <ul>
+            <li><a href="#services">Steel Railing</a></li>
+            <li><a href="#services">Glass Railing</a></li>
+            <li><a href="#services">CNC Main Gates</a></li>
+            <li><a href="#services">Window Grills</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CONTACT</h4>
+          <ul>
+            <li><a href="tel:+917261912722">+91 72619 12722</a></li>
+            <li><a href="#contact">Get a Free Quote</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Balaji Steel & Railing. All Rights Reserved.</span>
+      <span>Proprietor: <b>Jayram Bishnoi</b> · Crafted in Steel, Glass & Precision.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="wa-float" id="waFloat" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  'use strict';
+
+  var PHONE = '917261912722';
+
+  /* ---------- Header scroll state ---------- */
+  var header = document.getElementById('site-header');
+  function onScroll(){
+    if(window.scrollY > 40){ header.classList.add('scrolled'); }
+    else { header.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  /* ---------- Mobile menu ---------- */
+  var burger = document.getElementById('burger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function(){
+    var isOpen = mobileMenu.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      mobileMenu.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ---------- Scroll reveal ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.15, rootMargin:'0px 0px -60px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  /* ---------- Footer year ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- WhatsApp universal link builder ---------- */
+  function buildWhatsAppUrl(text){
+    var encoded = encodeURIComponent(text);
+    return 'https://whatsapp.com/send/?phone=' + PHONE + '&text=' + encoded + '&type=phone_number&app_absent=0';
+  }
+
+  /* Sticky floating WhatsApp button + inline contact-info WhatsApp link */
+  var defaultMessage = 'Hello Balaji Steel & Railing, I would like to enquire about your premium steel and railing work.';
+  var defaultWaUrl = buildWhatsAppUrl(defaultMessage);
+  document.getElementById('waFloat').setAttribute('href', defaultWaUrl);
+  document.getElementById('waDirect').setAttribute('href', defaultWaUrl);
+
+  /* ---------- Toast ---------- */
+  var toastEl = document.getElementById('toast');
+  var toastTimer = null;
+  function showToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 3200);
+  }
+
+  /* ---------- Quotation form -> WhatsApp redirection ---------- */
+  var form = document.getElementById('quoteForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var name = document.getElementById('clientName').value.trim();
+    var mobile = document.getElementById('clientMobile').value.trim();
+    var workType = document.getElementById('workType').value;
+    var details = document.getElementById('workDetails').value.trim();
+
+    if(!name){ showToast('Please enter your name.'); document.getElementById('clientName').focus(); return; }
+    if(!/^[0-9]{10}$/.test(mobile)){ showToast('Please enter a valid 10-digit mobile number.'); document.getElementById('clientMobile').focus(); return; }
+    if(!workType){ showToast('Please select a work type.'); document.getElementById('workType').focus(); return; }
+    if(!details){ showToast('Please describe your requirement.'); document.getElementById('workDetails').focus(); return; }
+
+    var message =
+      '*New Quotation Request — Balaji Steel & Railing*' + '\n\n' +
+      '*Client Name:* ' + name + '\n' +
+      '*Mobile Number:* ' + mobile + '\n' +
+      '*Work Type:* ' + workType + '\n' +
+      '*Work / Size Description:* ' + details + '\n\n' +
+      'Please share a detailed quotation. Thank you.';
+
+    var waUrl = buildWhatsAppUrl(message);
+
+    showToast('Redirecting to WhatsApp...');
+
+    window.location.href = waUrl;
+  });
+
+})();
+</script>
+</body>
+    </html>
